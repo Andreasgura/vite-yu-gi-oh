@@ -1,7 +1,11 @@
 <template>
-    <div>
-        Header
-    </div>
+    <header>
+        <div class="d-flex">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Yu-Gi-Oh%21_%28Logo%29.jpg/800px-Yu-Gi-Oh%21_%28Logo%29.jpg?20160216230530" alt="">
+            <h1>Yu-Gi-Oh API</h1>
+        </div>
+        
+    </header>
 </template>
 
 <script>
@@ -12,5 +16,9 @@
 </script>
 
 <style lang="scss" scoped>
-
+img {
+    width: 80px;
+    padding: 20px;
+    margin-right: 20px;
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card mb-4 ">
         <img :src="image" :alt="title" class="card-img-top">
         <div class="card-body">
             <h5 class="card-title">{{ title }}</h5>
@@ -35,5 +35,8 @@ ul {
 }
 li {
     color: black;
+}
+.card {
+    height: 500px;
 }
 </style>
