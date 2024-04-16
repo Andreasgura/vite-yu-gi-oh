@@ -4,7 +4,7 @@
     <i class="fa-solid fa-spinner fa-spin"></i>
   </div>
   <div v-else>
-    <HeaderComponent />
+    <HeaderComponent @changearchetype="filteronarchetype()" />
     <MainComponent />
   </div>
 </template>
@@ -29,18 +29,33 @@
     methods: {
       apiRequest(){
         this.loading = true
-        axios.get(this.store.apiUrl).then((response) => {
+        axios.get(this.store.apiUrl + this.store.endpoint.card, this.store.options).then((response) => {
           console.log(response.data);
-          this.store.characters = response.data.data
+          this.store.characters = response.data.data,
+          console.log(response.data.meta);
+          this.store.meta = response.data.meta
         }).catch((error) => {
           console.log(error);
         }).finally(() => {
           this.loading = false
         })
+      },
+      archetypeList(){
+        this.store.options.num = 10
+        axios.get(this.store.apiUrl + this.store.endpoint.archetype).then((response) => {
+          console.log(response.data);
+          this.store.archetypeList = response.data.slice(0, 10)
+          console.log(this.store.archetypeList);
+        })
+      },
+      
+      filteronarchetype(){
+        
       }
     },
     created(){
-      this.apiRequest()  
+       this.apiRequest() 
+       this.archetypeList() 
     }
   }
 </script>
