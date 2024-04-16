@@ -14,5 +14,6 @@ export const store = reactive({
     },
     characters: [],
     archetypeList: [],
-    meta: {}
+    meta: {},
+    archetypeSelected : ''
 })

@@ -41,7 +41,7 @@
         })
       },
       archetypeList(){
-        this.store.options.num = 10
+        
         axios.get(this.store.apiUrl + this.store.endpoint.archetype).then((response) => {
           console.log(response.data);
           this.store.archetypeList = response.data.slice(0, 10)
@@ -50,7 +50,12 @@
       },
       
       filteronarchetype(){
-        
+        if(this.store.archetypeSelected){
+          this.store.options.params.archetype = this.store.archetypeSelected
+        } else {
+          delete this.store.options.params.archetype
+        }
+        this.apiRequest()
       }
     },
     created(){

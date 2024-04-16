@@ -6,10 +6,10 @@
             <h1>Yu-Gi-Oh API</h1>
         </div>
        
-        <select class="form-select">
-            <option selected>Filtra per archetipo</option>
+        <select class="form-select" v-model="store.archetypeSelected" @change="$emit('changearchetype')">
+            <option selected value="" >Filtra per archetipo</option>
             <option :value="archetype.archetype_name"
-            v-for="(archetype, index) in this.store.archetypeList" :key="index" @change="$emit('changearchetype')">
+            v-for="(archetype, index) in this.store.archetypeList" :key="index">
                 {{archetype.archetype_name}}
             </option>
 
