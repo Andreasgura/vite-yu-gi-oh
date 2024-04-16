@@ -2,7 +2,7 @@
     <div class="container py-4 as">
         <div class="top-wrapper">
             <div class="prova mx-2 p-4 ">
-                Found {{store.characters.length}} cards
+                Found {{store.meta.total_rows}} cards
             </div>
         </div>
         <div class="main-wrapper container ">
